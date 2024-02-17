@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jnB-cr-xYk">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Scanner-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CameraScannerViewController" customModule="Amoun_Scanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xgo-eg-9wN">
+                                <rect key="frame" x="59" y="252.5" width="296" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Start To Open Scanner"/>
+                                <connections>
+                                    <action selector="qrScannerStartButon:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ntt-Cp-BQl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjL-sv-stA">
+                                <rect key="frame" x="50" y="414" width="314" height="24"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LjL-sv-stA" secondAttribute="trailing" constant="50" id="20Z-ro-6Yq"/>
+                            <constraint firstItem="Xgo-eg-9wN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="59" id="5rE-pV-dLU"/>
+                            <constraint firstItem="LjL-sv-stA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="6TL-tN-WLE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xgo-eg-9wN" secondAttribute="trailing" constant="59" id="Xv0-JL-hVp"/>
+                            <constraint firstItem="LjL-sv-stA" firstAttribute="top" secondItem="Xgo-eg-9wN" secondAttribute="bottom" constant="123.5" id="rap-XP-oeC"/>
+                            <constraint firstItem="Xgo-eg-9wN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="204.5" id="wwi-Hf-kza"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Scanner" image="scanner.fill" catalog="system" id="lrr-nC-AH7"/>
+                    <navigationItem key="navigationItem" id="YFw-UH-zdU"/>
+                    <connections>
+                        <outlet property="resultQrCode" destination="LjL-sv-stA" id="UHR-Lr-5LK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1728.985507246377" y="-10.044642857142856"/>
+        </scene>
+        <!--AR Scanner-->
+        <scene sceneID="383-4G-Rsb">
+            <objects>
+                <viewController id="sVQ-xA-jya" customClass="ARViewController" customModule="Amoun_Scanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fgR-CY-56x">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" enableRayTracedShadows="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LbJ-Do-9Vr">
+                                <rect key="frame" x="0.0" y="48" width="414" height="765"/>
+                            </arView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SAp-YQ-4zT"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LbJ-Do-9Vr" firstAttribute="trailing" secondItem="SAp-YQ-4zT" secondAttribute="trailing" id="0dD-34-vNK"/>
+                            <constraint firstItem="LbJ-Do-9Vr" firstAttribute="leading" secondItem="SAp-YQ-4zT" secondAttribute="leading" id="CD1-v1-Q1c"/>
+                            <constraint firstItem="LbJ-Do-9Vr" firstAttribute="bottom" secondItem="SAp-YQ-4zT" secondAttribute="bottom" id="Z7e-N7-IvN"/>
+                            <constraint firstItem="LbJ-Do-9Vr" firstAttribute="top" secondItem="SAp-YQ-4zT" secondAttribute="top" id="che-hK-TaZ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="ARScanner" image="camera.fill" catalog="system" id="0rF-A6-bPV"/>
+                    <navigationItem key="navigationItem" title="AR Scanner" id="HSp-H3-Cap"/>
+                    <connections>
+                        <outlet property="arView" destination="LbJ-Do-9Vr" id="BT8-K3-Abk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wMw-vB-tgR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2601" y="-10"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="4qz-ok-aLc">
+            <objects>
+                <tabBarController storyboardIdentifier="TabbarVc" automaticallyAdjustsScrollViewInsets="NO" id="jnB-cr-xYk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D6R-pc-7Md">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.1215686275" green="0.23529411759999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="FlL-fy-pM3"/>
+                        <segue destination="sVQ-xA-jya" kind="relationship" relationship="viewControllers" id="1x8-vj-a1s"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eRC-b3-l1r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="818.84057971014499" y="-10.044642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera.fill" catalog="system" width="128" height="93"/>
+        <image name="scanner.fill" catalog="system" width="128" height="93"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
